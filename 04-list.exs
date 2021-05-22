@@ -13,6 +13,10 @@ defmodule ListTest do
     assert sample() == ~w(Tim Jen Mac Kai)
   end
 
+  test "upper sigil" do
+    assert sample() == ~W(Tim Jen Mac Kai)
+  end
+
   test "head" do
     [head | _] = sample()
     assert head == "Tim"
