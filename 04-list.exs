@@ -72,8 +72,8 @@ defmodule ListTest do
   end
 
   test "list comprehension 2" do
-    some = for n <- sample(), when String.first(n) < "L", do: n <> "Lamer"
-    assert some == ["Kai Lamer"]
+    some = for n <- sample(), String.first(n) < "K", do: n <> " Lamer"
+    assert some == ["Jen Lamer"]
   end
 
   # I was curious about raw speed of working with large lists...
