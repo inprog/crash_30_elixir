@@ -32,7 +32,8 @@ defmodule CowInterrogator do
   end
 
   def cow_art do
-    path = Path.expand("support/cow.txt", __DIR__)
+    #path = Path.expand("support/cow.txt", __DIR__)
+    path = Path.expand("support/cow.txt")
     case File.read(path) do
       {:ok, art} -> art
       {:error, _} -> IO.puts "Error: cow.txt file not found"; System.halt(1)
