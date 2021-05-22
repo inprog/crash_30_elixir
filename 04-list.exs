@@ -13,6 +13,10 @@ defmodule ListTest do
     assert sample() == ~w(Tim Jen Mac Kai)
   end
 
+  test "upper sigil" do
+    assert sample() == ~W(Tim Jen Mac Kai)
+  end
+
   test "head" do
     [head | _] = sample()
     assert head == "Tim"
@@ -32,11 +36,13 @@ defmodule ListTest do
     assert List.delete(sample(), "Mac") == ~w(Tim Jen Kai)
     # only deletes the first occurrence
     assert List.delete([1, 2, 2, 3], 2) == [1, 2, 3]
+    refute List.delete([1, 2, 2, 3], 2) == [1, 3]
   end
 
   test "List.fold" do
     list = [20, 10, 5, 2.5]
     sum = List.foldr list, 0, &(&1 + &2)
+    IO.puts(List.foldr list, 0, &(&1 + &2) )
     # or...
     # sum = List.foldr list, 0, fn (num, sum) -> num + sum end
     assert sum == 37.5
