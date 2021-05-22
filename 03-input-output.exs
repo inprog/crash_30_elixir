@@ -52,6 +52,7 @@ defmodule InputOutputTest do
     # this call checks if cow_art function returns art from txt file
     art = CowInterrogator.cow_art
     assert trim(art) |> first == "(" # first is implemented in String module
+    assert trim(art) |> at(1) == "_"
   end
 end
 
