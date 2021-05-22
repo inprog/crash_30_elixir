@@ -11,7 +11,7 @@ defmodule CowInterrogator do
   """
   def get_name do
     IO.gets("What is your name? ")
-    |> String.trim
+    |> String.trim(" ")
   end
 
   def get_cow_lover do
