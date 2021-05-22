@@ -22,14 +22,15 @@ defmodule MyTest do
 
   test :assert_raise do                     # test macro also accepts an atom
     assert_raise ArithmeticError, fn ->
-      1 + "x"
+      1 + "y"
     end
   end
 
   test "assert_in_delta asserts that val1 and val2 differ by less than delta." do
     assert_in_delta 1, # actual
                     5, # expected
-                    6  # delta
+                    10  # delta
   end
+
 
 end

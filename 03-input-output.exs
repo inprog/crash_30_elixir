@@ -11,7 +11,7 @@ defmodule CowInterrogator do
   """
   def get_name do
     IO.gets("What is your name? ")
-    |> String.trim
+    |> String.trim(" ")
   end
 
   def get_cow_lover do
@@ -32,7 +32,8 @@ defmodule CowInterrogator do
   end
 
   def cow_art do
-    path = Path.expand("support/cow.txt", __DIR__)
+    #path = Path.expand("support/cow.txt", __DIR__)
+    path = Path.expand("support/cow.txt")
     case File.read(path) do
       {:ok, art} -> art
       {:error, _} -> IO.puts "Error: cow.txt file not found"; System.halt(1)
@@ -51,6 +52,7 @@ defmodule InputOutputTest do
     # this call checks if cow_art function returns art from txt file
     art = CowInterrogator.cow_art
     assert trim(art) |> first == "(" # first is implemented in String module
+    assert trim(art) |> at(1) == "_"
   end
 end
 
