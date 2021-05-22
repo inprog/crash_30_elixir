@@ -22,7 +22,7 @@ defmodule MyTest do
 
   test :assert_raise do                     # test macro also accepts an atom
     assert_raise ArithmeticError, fn ->
-      1 + "x"
+      1 + "y"
     end
   end
 
