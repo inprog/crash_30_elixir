@@ -42,6 +42,7 @@ defmodule ListTest do
   test "List.fold" do
     list = [20, 10, 5, 2.5]
     sum = List.foldr list, 0, &(&1 + &2)
+    IO.puts(List.foldr list)
     # or...
     # sum = List.foldr list, 0, fn (num, sum) -> num + sum end
     assert sum == 37.5
