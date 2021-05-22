@@ -36,6 +36,7 @@ defmodule ListTest do
     assert List.delete(sample(), "Mac") == ~w(Tim Jen Kai)
     # only deletes the first occurrence
     assert List.delete([1, 2, 2, 3], 2) == [1, 2, 3]
+    refute List.delete([1, 2, 2, 3], 2) == [1, 3]
   end
 
   test "List.fold" do
