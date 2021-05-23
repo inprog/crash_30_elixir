@@ -71,6 +71,11 @@ defmodule ListTest do
     assert some == ["Jen Morgan", "Kai Morgan"]
   end
 
+  test "list comprehension 2" do
+    some = for n <- sample(), String.first(n) < "K", do: n <> " Lamer"
+    assert some == ["Jen Lamer"]
+  end
+
   # I was curious about raw speed of working with large lists...
   # Let's just build and reverse a large list.
   # Suprisingly, the manual way is not much slower.
